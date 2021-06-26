@@ -32,13 +32,6 @@ class Navbar extends React.Component{
         return(
         <div>
             <div className="Navbar">
-                {/* <div className="container-fluid">
-                    <a className="Navbar__brand" href="/">
-                        <img className="Navbar__brand-logo" src={logo} alt="logo"/>
-                        <span className="fw-light">Demon</span>
-                        <span className="fw-bold">Slayer</span>
-                    </a>
-                </div> */}
                 <div>
                     <h1>Peliculas</h1>
                 </div>

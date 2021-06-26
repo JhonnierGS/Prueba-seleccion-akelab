@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './styles/BadgesList.css';
-import imgpelicula from  '../images/demonCh.jpg';
 import Calification from '../images/icons/Star 3.png'
 import Calification2 from '../images/icons/Star 5.png'
 
