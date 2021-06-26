@@ -22,7 +22,7 @@ Comienza haciendo Fork a este Repositorio y corriendolo con los siguientes coman
   #### `npm run servers`
   la aplicación hace llamdos a un servidor local hecho en JSONserver por lo cual es necesario iniciar en una segunda terminal el comando  `npm run servers` este correra en el [http://localhost:6969](http://localhost:6969)
   
-### 🧐 sobre la pagina
+### 🧐 sobre-la-pagina
 Esta pagina es una  SPA hecha en **React.JS** sobre datos de peliculas clasicas en la  que puedes ver
 
   - titulos pelicuas
