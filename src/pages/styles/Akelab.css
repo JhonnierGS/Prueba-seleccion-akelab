@@ -180,3 +180,29 @@
     top: 10px;
     left: 10px;
 }
+
+/* responsive.............. */
+
+@media (max-width: 1000px){
+   
+}
+
+@media (max-width: 750px){
+    .ake__container{
+        align-items: center;
+    }
+
+    .ake__button{
+        top: 76%;
+    }
+
+    .ake__container h1 {
+        font-size: 11vw;
+    }
+}
+
+@media (max-width: 600px){
+    .ake__container h1 {
+        font-size: 14vw;
+    }
+}

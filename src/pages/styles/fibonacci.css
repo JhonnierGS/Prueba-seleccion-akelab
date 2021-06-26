@@ -90,3 +90,26 @@
     top: 10px;
     left: 10px;
 }
+
+
+/* responsive............ */
+
+@media (max-width: 1000px){
+   
+}
+
+@media (max-width: 750px){
+    .fibo__container{
+        align-items: center;
+    }
+
+    .fibo__container h1 {
+        font-size: 11vw;
+    }
+}
+
+@media (max-width: 600px){
+    .fibo__container h1 {
+        font-size: 14vw;
+    }
+}

@@ -1,28 +1,3 @@
-/* .Navbar {
-    width: 100%;
-    padding: 0.5rem 0;
-    background-color: #000;
-}
-
-.Navbar__brand {
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.Navbar__brand:hover {
-    color: #ffffff;
-}
-
-.Navbar__brand-logo {
-    width: 35px;
-    height: 35px;
-    margin-right: 0.5rem;
-} */
-
-
-
 .Navbar{
     display: flex;
     justify-content: space-between;
@@ -197,4 +172,83 @@
     position: absolute;
     bottom: 5px;
     right: 10px;
+}
+
+/* responsive....... */
+
+@media  (max-width: 1300px){
+    .checkbox__list {
+        left: 24.35%;
+        top: 23.85%;
+    }
+}
+
+@media (max-width: 1000px){
+    .checkbox__list {
+        left: 28.35%;
+        top: 22.85%;
+    }
+}
+
+@media (max-width: 900px){
+    .checkbox__list {
+        left: 35.35%;
+        top: 22.85%;
+    }
+
+    .order__list{
+        left: 512px;
+        top: 155px;
+    }
+}
+
+@media (max-width: 750px){
+    .checkbox__list {
+        left: 43.35%;
+        top: 22.85%;
+    }
+
+    .order__list{
+        left: 445px;
+        top: 155px;
+    }
+}
+
+@media (max-width: 600px){
+    .menu__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu__order{
+        display: none;
+    }
+
+    .checkbox__list {
+        left: 52.35%;
+        top: 22.85%;
+    }
+
+    .order__list{
+        display: none;
+    }
+}
+
+@media (max-width: 500px){
+    .menu__container{
+        padding: 22px 25px 0;
+    }
+
+    .menu__order{
+        display: none;
+    }
+
+    .checkbox__list {
+        left: 52.35%;
+        top: 25.85%;
+    }
+
+    .rute__buttons{
+        display: flex;
+    }
 }
