@@ -1,0 +1,182 @@
+.ake__container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: #252839;
+}
+
+.ake__container h1{
+    position: relative;
+    font-size: 7vw;
+    font-family: 'Times New Roman', Times, serif;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+}
+
+.ake__container h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #ffc107;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #ffc107;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}
+
+.ake__container p{
+    background: #fff;
+    width: 340px;
+    height: 50px;
+    outline: none;
+    border: none;
+    padding: 0 25px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.ake__container h3{
+    position: relative;
+    font-size: 5vw;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffc107;
+    -webkit-text-stroke: 0.1vw #383d52;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ake__button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1670f0;
+    margin-top: 18px;
+    padding: 30px 60px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ake__button::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(255,255,255, .05);
+}
+
+.ake__button span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #0c002b, #1779ff, #0c002b);
+    animation: animate1 2s linear infinite paused;
+}
+
+@keyframes animate1{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.ake__button span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0c002b, #1779ff, #0c002b);
+    animation: animate2 2s linear infinite paused;
+}
+
+@keyframes animate2{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+.ake__button span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, #0c002b, #1779ff, #0c002b);
+    animation: animate3 2s linear infinite paused;
+}
+
+@keyframes animate3{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.ake__button span:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to top, #0c002b, #1779ff, #0c002b);
+    animation: animate4 2s linear infinite paused;
+}
+
+@keyframes animate4{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+.ake__button:hover span:nth-child(1),
+.ake__button:hover span:nth-child(2),
+.ake__button:hover span:nth-child(3),
+.ake__button:hover span:nth-child(4){
+    animation-play-state: running;
+}
+
+.back__button{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

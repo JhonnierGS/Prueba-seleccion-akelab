@@ -1,0 +1,54 @@
+.json__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card__container{
+    width: 417px;
+    height: 435px;
+    background: #fff;
+    margin: 29px 0 10px 25px;
+    border-radius: 16px;
+    border: 1.5px solid #4F4F4F;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 7px rgb(0 0 0 / 15%);
+    overflow: hidden;
+    padding: 18px 0 0 10px;
+}
+
+.card__text{
+    margin-top: 20px;
+}
+
+.card_content{
+    display: flex;
+}
+
+.card__image img{
+    width: 160px;
+    height: 291px;
+    margin-top: 10px;
+    
+}
+
+.description{
+    margin-top: -22px;
+    font-size: 10px
+}
+
+.list_card-text p{
+    margin: 2px 0;
+    font-size: 12px;
+    
+}
+
+.calification{
+    display: flex;
+    align-items: center;
+} 
+
+.calification img{
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+}

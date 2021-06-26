@@ -1,0 +1,92 @@
+.fibo__container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: #252839;
+}
+
+.fibo__container h1{
+    position: relative;
+    font-size: 7vw;
+    font-family: 'Times New Roman', Times, serif;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+}
+.fibo__container h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #ffc107;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #ffc107;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}
+
+.fibo__container input{
+    position: relative;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.fibo__container input[type="text"]{
+    background: #fff;
+    width: 340px;
+    height: 50px;
+    outline: none;
+    border: none;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+}
+
+.fibo__container input[type="submit"]{
+    position: relative;
+    border-radius: 0 25px 25px 0;
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ffc107;
+    color: #fff;
+}
+
+.fibo__container input[type="submit"]:hover{
+    background: #ff5722;
+}
+
+.fibo__res{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.fibo__res h3{
+    position: relative;
+    font-size: 9vw;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffc107;
+    -webkit-text-stroke: 0.1vw #383d52;
+    text-transform: uppercase;
+}
+
+.back__button{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
