@@ -2,7 +2,7 @@
 
 Este proyecto se inició con la aplicación [Create React App](https://github.com/facebook/create-react-app).
 
-##Tabla de contenido
+## Tabla de contenido
 
   1. [Fork](#Fork).
   2. [Comandos](#iniciar-proyecto).
