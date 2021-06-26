@@ -7,7 +7,7 @@ Este proyecto se inició con la aplicación [Create React App](https://github.co
   1. [Fork](#Fork).
   2. [Comandos](#iniciar-proyecto).
   3. [Pagina web](#sobre-la-pagina).
-  4. [Fibonacci](Fibonacci).
+  4. [Fibonacci](#Fibonacci).
   5. [Akelab](#Akelab).
   
 ### 🔄 Fork
