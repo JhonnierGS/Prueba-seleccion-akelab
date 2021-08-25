@@ -42,8 +42,7 @@ class Akelab extends React.Component{
                     <p>Number: {this.state.number}</p>
                     <h3>{akebal(this.state.number)}</h3>
                     <div className="ake__button">
-                        <a 
-                            onClick={this.onClick}>
+                        <a onClick={this.onClick}>
                             <span></span> 
                             <span></span> 
                             <span></span> 
