@@ -16,10 +16,10 @@ import { useSelector , useDispatch} from 'react-redux'
 
 
 
-function BadgesList({movies}) {
-
-    console.log(movies)
+function BadgesList({movies, filter, order}) {
+    console.log(filter)
     
+// buscador................................
     const [usuario, setUsuarios] = useState([]);
     const [tablaUsuarios, setTablaUsuarios] = useState([]);
     const [busqueda, setBusqueda] = useState("");
@@ -34,7 +34,7 @@ function BadgesList({movies}) {
         })
     }
 
-    const handleChange = e =>{
+    const handleChangeSearch = e =>{
         setBusqueda(e.target.value)
         filtrar(e.target.value);
     }
@@ -51,8 +51,9 @@ function BadgesList({movies}) {
     useEffect(() =>{
         peticionGet();
     }, [])
-    
-    const ponerFilas = () => usuario.map((usuarios) =>(
+// buscador..............................    
+// returPeliculas................................................
+    const ponerFilas = (arreglo) => arreglo.map((usuarios) =>(
         <tr key={usuarios.id}>
             {usuarios ? (<div className="card__container">
                 <h6>{usuarios.title}({usuarios.release_date})</h6>
@@ -80,8 +81,8 @@ function BadgesList({movies}) {
             </div>) : null}
         </tr>
     ));
-    
-
+// returPeliculas.....................................................................
+// closedWidows....................
     const montrarLista = () => {
         document.getElementById('list1').style.display="block";
     }
@@ -94,11 +95,75 @@ function BadgesList({movies}) {
     const ocultarLista2 = () => {
         document.getElementById('list2').style.display="none";
     }
+// closedWidows....................
+// checkbox.........................................................................
+    const dispatch = useDispatch()
+    const [checkboxTrue, setCheckboxTrue] = useState([])
+
 
     const handleCheckbox = event => {
-        console.log(usuario)
-        console.log(event.target.value)
+        
+        if(checkboxTrue.includes(event.target.value) ){
+            const filterCheckboxTrue = checkboxTrue.filter( c => c !== event.target.value )
+            setCheckboxTrue(filterCheckboxTrue)
+        }else{
+            setCheckboxTrue([
+                ...checkboxTrue,
+                event.target.value
+            ])
+        }
     }
+
+    const cambiosFiltro = (search, arregloGeneros) =>{
+        if(movies.length > 0 && arregloGeneros.length > 0){
+            const filterState = movies.filter( (movie) => movie.title.toLowerCase().includes(search.toLowerCase()))
+            const filterGenero = filterState.filter((movie) => arregloGeneros.includes(movie.genre_ids[0].toString().toLowerCase()));
+            dispatch ({
+                payload: filterGenero,
+                type: 'upDateFilter'
+            })
+        }
+
+
+    }
+
+    const arrayOrdenado = (numero) => {
+        console.log("click")
+        if(movies.length > 0){
+            if(numero === 1){
+                    const AntiguasNuevas = movies.sort((a, b) => parseInt(a.release_date.substr(0,4)) - parseInt(b.release_date.substr(0,4)))
+                    dispatch({type : "@cargarFiltros" , payload : AntiguasNuevas , movies })
+                    console.log(movies)
+                }else if(numero === 2){
+                    const nuevasAntiguas = movies.sort((a, b) => parseInt(b.release_date.substr(0,4)) - parseInt(a.release_date.substr(0,4)))
+                    console.log(movies)
+                    dispatch({type : "@cargarFiltros" , payload : nuevasAntiguas , movies })
+                }else if(numero === 3){
+                    const calification = movies.sort((a, b) => parseFloat(a.vote_average) - parseFloat(b.vote_average))
+                    dispatch({type : "@cargarFiltros" , payload : calification , movies })
+        
+                }else if(numero === 4){
+                    const calification = movies.sort((a, b) => parseFloat(b.vote_average) - parseFloat(a.vote_average))
+                    dispatch({type : "@cargarFiltros" , payload : calification , movies })
+                }else {
+                    return numero
+                }
+            }
+            console.log(numero)
+        
+    }
+    
+    useEffect(() => {
+        cambiosFiltro(busqueda, checkboxTrue)
+        arrayOrdenado()
+    }, [checkboxTrue])
+// checkbox.........................................................................
+
+
+
+
+
+
 
         return(
 
@@ -109,7 +174,7 @@ function BadgesList({movies}) {
                         type="text"
                         placeholder="Buscar por nombre de pelicula"
                         value={busqueda}
-                        onChange={handleChange}
+                        onChange={handleChangeSearch}
                     />
                     <img src={VectorIcon} alt='icono busqueda'/>
                 </div>
@@ -126,12 +191,12 @@ function BadgesList({movies}) {
                 <h5>Genero</h5>
                 <ul>
                     <li><input onChange={handleCheckbox} type="checkbox" value="aventura"/>Aventura</li>
-                    <li><input onChange={handleCheckbox} type="checkbox" value="accion"/>Acción</li>
-                    <li><input onChange={handleCheckbox} type="checkbox" value="fantasia"/>Fantasia</li>
+                    <li><input onChange={handleCheckbox} type="checkbox" value="acción"/>Acción</li>
                     <li><input onChange={handleCheckbox} type="checkbox" value="comedia"/>Comedia</li>
                     <li><input onChange={handleCheckbox} type="checkbox" value="romance"/>Romance</li>
-                    <li><input onChange={handleCheckbox} type="checkbox" value="suspenso"/>Suspenso</li>
+                    <li><input onChange={handleCheckbox} type="checkbox" value="terror"/>Terror</li>
                     <li><input onChange={handleCheckbox} type="checkbox" value="crimen"/>Crimen</li>
+                    <li><input onChange={handleCheckbox} type="checkbox" value="fantasìa"/>Todas</li>
                     <a href="javascript:void(0);" onClick={ocultarLista}>Cerrar</a>
                 </ul>
             </div>
@@ -139,27 +204,30 @@ function BadgesList({movies}) {
             <div className="order__list" id="list2">
                 <h5>Fecha</h5>
                 <ul>
-                    <li>Nuevas - Antiguas</li>
-                    <li>Antiguas - Nuevas</li>
+                    <li onClick={() => arrayOrdenado(2)}>Nuevas - Antiguas</li>
+                    <li onClick={() => arrayOrdenado(1)}>Antiguas - Nuevas</li>
                 </ul>
                 <h5>Calificación</h5>
                 <ul>
-                    <li>0 - 10 epuntos</li>
-                    <li>10 - 0 puntos</li>
+                    <li onClick={()=> arrayOrdenado(3) } >0 - 10 epuntos</li>
+                    <li onClick={()=> arrayOrdenado(4) } >10 - 0 puntos</li>
                 </ul>
                 <a href="javascript:void(0);" onClick={ocultarLista2}>Cerrar</a>
             </div>
                 <div className="json__container">
-                    {ponerFilas()}
+                    {filter.length > 0 ? ponerFilas(filter) : ponerFilas(usuario) }
+                
                 </div>
             </div>
         )
 
 }
 
-const mapStateToProps = (reducers) => ({
-    movies: reducers.usuarios
+const mapStateToProps = (state) => ({
+    movies: state.usuarioReducer.usuarios,
+    filter: state.usuarioReducer.filterMovies,
+    order: state.usuarioReducer.orderMovies
     
 })
 
-export default connect(mapStateToProps, usuariosAction)(BadgesList)
+export default connect(mapStateToProps, null)(BadgesList)
