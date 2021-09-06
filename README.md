@@ -32,7 +32,7 @@ Esta pagina es una  SPA hecha en **React.JS** sobre datos de peliculas clasicas 
   - genero
   - fecha de estreno
 
-Toda los datos son tridos de un archivo JSON desde un servidro local por esto para interactuar con el proyecto debes estar en [http://localhost:3000/badges](http://localhost:3000)
+Toda los datos son traidos de un archivo JSON desde un servidro local por esto para interactuar con el proyecto debes estar en [http://localhost:3000/badges](http://localhost:3000)
 
 ### 🔢Fibonacci
 Una vez estes en el [http://localhost:3000/bdges](http://localhost:3000) podras ver dos botones `Akelab` y `fibonacci` que se hicieron con react router para una mejor velocidad, 
