@@ -35,10 +35,10 @@ Esta pagina es una  SPA hecha en **React.JS** sobre datos de peliculas clasicas 
 Toda los datos son traidos de un archivo JSON desde un servidro local por esto para interactuar con el proyecto debes estar en [http://localhost:3000/](http://localhost:3000)
 
 ### 🔢Fibonacci
-Una vez estes en el [http://localhost:3000/bdges](http://localhost:3000) podras ver dos botones `Akelab` y `fibonacci` que se hicieron con react router para una mejor velocidad, 
+Una vez estes en el [http://localhost:3000/](http://localhost:3000) podras ver dos botones `Akelab` y `fibonacci` que se hicieron con react router para una mejor velocidad, 
 si le das click en fibonacci podras interactuar con un input donde puedes digitar cualquier numero y este te dara el resultado de la suma Fibonacci
 
 ### ⚙Akelab
-Una vez este en el [http://localhost:3000/bdges](http://localhost:3000) podras ver dos botones `Akelab` y `fibonacci` que se hicieron con react router para una mejor velocidad, 
+Una vez este en el [http://localhost:3000/](http://localhost:3000) podras ver dos botones `Akelab` y `fibonacci` que se hicieron con react router para una mejor velocidad, 
 si le das click en Akelab podras interactuar con un boton `NEXT` donde dependiendo si el numero es multiplo de 3 mostrara AKE si es multiplo de 5 mostrara LAB y si el numero es multiplo de 3 y 5 mostrara AKELAB
 
