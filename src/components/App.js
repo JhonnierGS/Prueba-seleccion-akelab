@@ -9,9 +9,9 @@ function App(){
     return (
         <BrowserRouter>
         <Switch>
-            <Route exact path="/badges" component={Badges} />
-            <Route exact path="/badges/fibo" component={Fibonacci} />
-            <Route exact path="/badges/akelab" component={Akelab} />
+            <Route exact path="/fibo" component={Fibonacci} />
+            <Route exact path="/akelab" component={Akelab} />
+            <Route exact path="/" component={Badges} />
         </Switch>
         </BrowserRouter>
     )

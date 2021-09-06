@@ -15,10 +15,10 @@ function Navbar() {
                     <h1>Peliculas</h1>
                 </div>
                 <div className="rute__buttons">
-                    <Link to="/badges/akelab" className="btn btn-dark">
+                    <Link to="/akelab" className="btn btn-dark">
                         Akelab
                     </Link>
-                    <Link to="/badges/fibo" className="btn btn-dark">
+                    <Link to="/fibo" className="btn btn-dark">
                         fibonacci
                     </Link>
                 </div>

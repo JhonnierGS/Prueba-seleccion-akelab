@@ -7,7 +7,6 @@ import './styles/Navbar.css'
 import './styles/BadgesList.css';
 import Calification from '../images/icons/Star 3.png'
 import Calification2 from '../images/icons/Star 5.png'
-import * as usuariosAction from '../action/usuariosAction';
 import VectorIcon from '../images/icons/Vector.png';
 import generoIcon from '../images/icons/Filter Icon.png';
 import ArrowIcon from '../images/icons/Arrow Icon.png';

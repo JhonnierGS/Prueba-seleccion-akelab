@@ -33,7 +33,7 @@ class Akelab extends React.Component{
         return (
             <div className="ake__container">
                 <div className="back__button">
-                    <Link to="/badges" className="btn btn-dark">
+                    <Link to="/" className="btn btn-dark">
                         Regresar
                     </Link>
                 </div>

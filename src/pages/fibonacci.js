@@ -30,7 +30,7 @@ class Fibonacci extends React.Component{
         return (
             <div className="fibo__container">
                 <div className="back__button">
-                    <Link to="/badges" className="btn btn-dark">
+                    <Link to="/" className="btn btn-dark">
                         Regresar
                     </Link>
                 </div>
