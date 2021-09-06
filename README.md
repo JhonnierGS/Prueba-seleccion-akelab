@@ -17,7 +17,7 @@ Comienza haciendo Fork a este Repositorio y corriendolo con los siguientes coman
 
 
   #### `npm run start`
-  Para ejecutar la aplicación usamos en la terminal `npm run star` este correra en el [http://localhost:3000](http://localhost:3000) y nos mostrara una pagna en blanco para ver el proyecto agregale `/badges`
+  Para ejecutar la aplicación usamos en la terminal `npm run star` este correra en el [http://localhost:3000](http://localhost:3000) y nos mostrara el proyecto 
   
   #### `npm run servers`
   la aplicación hace llamdos a un servidor local hecho en JSONserver por lo cual es necesario iniciar en una segunda terminal el comando  `npm run servers` este correra en el [http://localhost:6969](http://localhost:6969)
